@@ -7,12 +7,38 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest",
+    "test:unit": "vitest --run",
+    "prepare": "husky"
   },
   "dependencies": {
+    "@nuxt/eslint": "1.2.0",
+    "@nuxt/ui": "3.0.1",
+    "eslint": "^9.0.0",
     "nuxt": "^3.16.1",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "typescript": "^5.6.3",
+    "vue": "latest",
+    "vue-router": "latest"
   },
-  "packageManager": "pnpm@10.6.1+sha512.40ee09af407fa9fbb5fbfb8e1cb40fbb74c0af0c3e10e9224d7b53c7658528615b2c92450e74cfad91e3a2dcafe3ce4050d80bda71d757756d2ce2b66213e9a3"
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "vite-plugin-vue-tracer": "^0.1.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "tailwindcss": "4.0.7",
+      "@tailwindcss/postcss": "4.0.7",
+      "@tailwindcss/vite": "4.0.7"
+    }
+  },
+  "packageManager": "pnpm@10.6.1+sha512.40ee09af407fa9fbb5fbfb8e1cb40fbb74c0af0c3e10e9224d7b53c7658528615b2c92450e74cfad91e3a2dcafe3ce4050d80bda71d757756d2ce2b66213e9a3",
+  "overrides": {
+    "vite-plugin-inspect": "0.7.38"
+  },
+  "resolutions": {
+    "vite-plugin-inspect": "0.7.38"
+  }
 }
