@@ -68,15 +68,15 @@ export default withNuxt(
         "vue/html-end-tags": "error",
         "vue/mustache-interpolation-spacing": "error",
         "vue/no-multi-spaces": "error",
-        // "vue/singleline-html-element-content-newline": [
-        //   "warn",
-        //   {
-        //     ignoreWhenNoAttributes: true,
-        //     ignoreWhenEmpty: true,
-        //     ignores: ["pre", "textarea"],
-        //     externalIgnores: [],
-        //   },
-        // ],
+        "vue/singleline-html-element-content-newline": [
+          "warn",
+          {
+            ignoreWhenNoAttributes: true,
+            ignoreWhenEmpty: true,
+            ignores: ["pre", "textarea"],
+            externalIgnores: [],
+          },
+        ],
         "no-irregular-whitespace": "off",
       },
     },
