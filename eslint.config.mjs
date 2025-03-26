@@ -30,6 +30,7 @@ export default withNuxt(
   ],
   [
     {
+      files: ["**/*.vue"],
       rules: {
         semi: ["error", "always"],
         quotes: ["error", "double"],
