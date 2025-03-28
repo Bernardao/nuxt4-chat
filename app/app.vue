@@ -2,7 +2,9 @@
   <UApp>
     <!-- Screen readers help -->
     <NuxtRouteAnnouncer />
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </UApp>
 </template>
 
