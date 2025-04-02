@@ -1,20 +1,16 @@
 <template>
-  <div class="chat-page">
-    <ChatWindow />
+  <div class="chat-generate-page">
+    <ChatWindow :chat :messages @send-message="sendMessage" />
   </div>
 </template>
 
 <script lang="ts" setup>
-// definePageMeta({
-//   layout: false,
-//   // title: 'Chat',
-//   // meta: [
-//   //   {
-//   //     name: 'description',
-//   //     content: 'Chat page description'
-//   //   }
-//   // ]
-// });
+const { chat, messages, sendMessage } = useChat();
+useHead({
+  title: chat.value.title,
+  htmlAttrs: { class: "my-really-cool-class" },
+  // script: [{ innerHTML: "window.analytics = window.analytics || ['hi']" }],
+});
 </script>
 
 <style></style>
