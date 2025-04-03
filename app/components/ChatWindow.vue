@@ -81,14 +81,6 @@ watch(() => props.messages, pinToBottom, {
               class="rounded-full shadow-sm"
               @click="() => scrollToBottom()"
             />
-            <!-- <UButton
-              v-if="showScrollButton"
-              color="neutral"
-              variant="outline"
-              icon="i-heroicons-arrow-down"
-              class="rounded-full shadow-sm"
-              @click="() => scrollToBottom()"
-            /> -->
           </div>
           <ChatInput
             @send-message="handleSendMessage"
