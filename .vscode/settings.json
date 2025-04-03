@@ -13,6 +13,5 @@
   },
   "prettier.singleAttributePerLine": true,
   "html.format.wrapAttributes": "force-expand-multiline",
-  // "prettier.printWidth": 101
-  "prettier.printWidth": 80
+  "prettier.printWidth": 120
 }
