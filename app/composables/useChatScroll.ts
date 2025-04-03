@@ -16,16 +16,8 @@ export default function useChatScroll() {
   // Smooth scroll to bottom
   const scrollToBottom = (immediate = false): void => {
     if (!scrollContainer.value) return;
-    // console.log(
-    //   "Clicked scorll to bottom",
-    //   immediate,
-    //   scrollContainer.value,
-    //   scrollContainer.value.scrollHeight,
-    //   scrollContainer.value.clientHeight
-    // );
 
-    const targetScrollTop =
-      scrollContainer.value.scrollHeight - scrollContainer.value.clientHeight;
+    const targetScrollTop = scrollContainer.value.scrollHeight - scrollContainer.value.clientHeight;
 
     if (immediate) {
       scrollContainer.value.scrollTop = targetScrollTop;
@@ -41,13 +33,10 @@ export default function useChatScroll() {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const easeInOutCubic =
-        progress < 0.5
-          ? 4 * progress * progress * progress
-          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        progress < 0.5 ? 4 * progress * progress * progress : 1 - Math.pow(-2 * progress + 2, 3) / 2;
 
       if (scrollContainer.value) {
-        scrollContainer.value.scrollTop =
-          startScrollTop + distance * easeInOutCubic;
+        scrollContainer.value.scrollTop = startScrollTop + distance * easeInOutCubic;
 
         if (progress < 1) {
           requestAnimationFrame(step);
