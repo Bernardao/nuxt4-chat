@@ -1,8 +1,10 @@
 <template>
   <UApp>
+    <!-- Screen readers help -->
     <NuxtRouteAnnouncer />
-    <UButton>Click me</UButton>
-    <!-- <NuxtWelcome /> -->
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </UApp>
 </template>
 
