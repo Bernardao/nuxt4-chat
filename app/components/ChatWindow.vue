@@ -1,31 +1,55 @@
 <script setup lang="ts">
-import type { ChatMessage, Chat } from "~/types";
+import type {
+  ChatMessage,
+  Chat,
+} from "~/types";
 
-const props = defineProps<{ messages: ChatMessage[]; chat: Chat }>();
+const props = defineProps<{
+  messages: ChatMessage[];
+  chat: Chat;
+}>();
 const emit = defineEmits(["send-message"]);
-const { scrollToBottom, pinToBottom, showScrollButton } = useChatScroll();
+const {
+  scrollToBottom,
+  pinToBottom,
+  showScrollButton,
+} = useChatScroll();
 
 // const { scrollToBottom, showScrollButton, pinToBottom } = useChatScroll();
 function handleSendMessage(message: string) {
   emit("send-message", message);
 }
-watch(() => props.messages, pinToBottom, { deep: true });
+watch(() => props.messages, pinToBottom, {
+  deep: true,
+});
 </script>
 
 <template>
-  <div ref="scrollContainer" class="scroll-container">
+  <div
+    ref="scrollContainer"
+    class="scroll-container"
+  >
     <UContainer class="chat-container">
-      <div v-if="!messages?.length" class="empty-state">
+      <div
+        v-if="!messages?.length"
+        class="empty-state"
+      >
         <div class="empty-state-card">
-          <h2 class="empty-state-title">Start your chat</h2>
-          <ChatInput @send-message="handleSendMessage" />
+          <h2 class="empty-state-title">
+            Start your chat
+          </h2>
+          <ChatInput
+            @send-message="handleSendMessage"
+          />
         </div>
       </div>
 
       <template v-else>
         <div class="chat-header">
           <h1 class="title">
-            {{ chat?.title || "Untitled Chat" }}
+            {{
+              chat?.title || "Untitled Chat"
+            }}
           </h1>
         </div>
         <div class="messages-container">
@@ -34,8 +58,10 @@ watch(() => props.messages, pinToBottom, { deep: true });
             :key="message.id"
             class="message"
             :class="{
-              'message-user': message.role === 'user',
-              'message-ai': message.role === 'assistant',
+              'message-user':
+                message.role === 'user',
+              'message-ai':
+                message.role === 'assistant',
             }"
           >
             <div class="message-content">
@@ -44,7 +70,9 @@ watch(() => props.messages, pinToBottom, { deep: true });
           </div>
         </div>
         <div class="message-form-container">
-          <div class="scroll-to-bottom-button-container">
+          <div
+            class="scroll-to-bottom-button-container"
+          >
             <UButton
               v-if="showScrollButton"
               color="neutral"
@@ -62,7 +90,9 @@ watch(() => props.messages, pinToBottom, { deep: true });
               @click="() => scrollToBottom()"
             /> -->
           </div>
-          <ChatInput @send-message="handleSendMessage" />
+          <ChatInput
+            @send-message="handleSendMessage"
+          />
         </div>
       </template>
     </UContainer>
@@ -140,7 +170,9 @@ watch(() => props.messages, pinToBottom, { deep: true });
   position: fixed;
   bottom: 1.5rem;
   max-width: 800px;
-  width: calc(100% - 3rem); /* Account for container padding */
+  width: calc(
+    100% - 3rem
+  ); /* Account for container padding */
   z-index: 10;
 }
 
@@ -154,7 +186,8 @@ watch(() => props.messages, pinToBottom, { deep: true });
   pointer-events: none;
 }
 
-.scroll-to-bottom-button-container :deep(button) {
+.scroll-to-bottom-button-container
+  :deep(button) {
   pointer-events: auto;
 }
 

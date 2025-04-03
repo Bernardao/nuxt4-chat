@@ -2,12 +2,17 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.printWidth": 45
   },
   "files.associations": {
     "*.css": "tailwindcss"
   },
   "editor.quickSuggestions": {
     "strings": "on"
-  }
+  },
+  "prettier.singleAttributePerLine": true,
+  "html.format.wrapAttributes": "force-expand-multiline",
+  // "prettier.printWidth": 101
+  "prettier.printWidth": 80
 }
