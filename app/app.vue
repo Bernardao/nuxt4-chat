@@ -9,5 +9,6 @@
 </template>
 
 <script setup lang="ts">
-//
+// const config = useRuntimeConfig();
+// console.log("Config: ", config);
 </script>

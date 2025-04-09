@@ -11,4 +11,10 @@ export default defineNuxtConfig({
   // imports: {
   //   scan: false,
   // },
+  runtimeConfig: {
+    openaiApiKey: "hello",
+    public: {
+      someValue: "On the frontend",
+    },
+  },
 });

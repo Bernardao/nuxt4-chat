@@ -1,4 +1,5 @@
 export default defineAppConfig({
+  title: "Course Nuxt Chat",
   ui: {
     colors: {
       primary: "seagull",
