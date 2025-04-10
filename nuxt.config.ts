@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   css: ["~/assets/css/main.css"],
-  modules: ["@nuxt/eslint", "@nuxt/ui"],
+  modules: ["@nuxt/eslint", "@nuxt/ui", "@nuxtjs/mdc"],
 
   // imports: {
   //   scan: false,
@@ -15,6 +15,12 @@ export default defineNuxtConfig({
     openaiApiKey: "hello",
     public: {
       someValue: "On the frontend",
+    },
+  },
+  mdc: {
+    highlight: {
+      theme: "material-theme-palenight",
+      langs: ["html", "markdown", "vue", "typescript", "javascript"],
     },
   },
 });
